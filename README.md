@@ -1,2 +1,5 @@
 # dust-3
-미세먼지 프로젝트 - 3팀
+
+## Backend
+- EC2 instance Elastic IP http://52.78.203.80/
+- mock API documentation [Swagger UI](http://52.78.203.80:8080/swagger-ui.html)
