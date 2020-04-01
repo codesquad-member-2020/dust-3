@@ -15,7 +15,7 @@ import java.util.List;
 public class AirQualityController {
 
     @GetMapping("/air-quality-info")
-    public ResponseEntity<List<AirQualityInfo>> getAirQualityInfo(@RequestParam String x, @RequestParam String y) {
+    public ResponseEntity<AirQualityInfos> getAirQualityInfo(@RequestParam String x, @RequestParam String y) {
         List<AirQualityInfo> airQualityInfos = new ArrayList<>();
         LocalDateTime now = LocalDateTime.now().truncatedTo(ChronoUnit.HOURS);
         for (int i = 0; i < 24; i++) {
@@ -47,11 +47,11 @@ public class AirQualityController {
             aq.setLocation("종로구");
             airQualityInfos.add(aq);
         }
-        return ResponseEntity.ok(airQualityInfos);
+        return ResponseEntity.ok(new AirQualityInfos(airQualityInfos));
     }
 
     @GetMapping("/forecast-info")
-    public ResponseEntity<List<ForecastInfo>> getForecastInfo() {
+    public ResponseEntity<ForecastInfos> getForecastInfo() {
         List<ForecastInfo> forecastInfos = new ArrayList<>();
         for (int i = 0; i < 24; i++) {
             ForecastInfo forecastInfo = new ForecastInfo();
@@ -60,6 +60,6 @@ public class AirQualityController {
             forecastInfo.setForecastImage("52.78.203.80:8080/test-" + i + ".png");
             forecastInfos.add(forecastInfo);
         }
-        return ResponseEntity.ok(forecastInfos);
+        return ResponseEntity.ok(new ForecastInfos(forecastInfos));
     }
 }
