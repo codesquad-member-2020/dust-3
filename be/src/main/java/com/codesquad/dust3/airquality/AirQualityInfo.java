@@ -1,4 +1,4 @@
-package com.codesquad.dust3;
+package com.codesquad.dust3.airquality;
 
 public class AirQualityInfo {
     private String airQualityIndex;
@@ -36,15 +36,5 @@ public class AirQualityInfo {
 
     public void setLocation(String location) {
         this.location = location;
-    }
-
-    @Override
-    public String toString() {
-        return "AirQualityInfo{" +
-                "airQualityIndex='" + airQualityIndex + '\'' +
-                ", PM10='" + PM10 + '\'' +
-                ", currentTime='" + currentTime + '\'' +
-                ", location='" + location + '\'' +
-                '}';
     }
 }
