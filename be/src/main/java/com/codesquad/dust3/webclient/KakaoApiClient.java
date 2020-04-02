@@ -14,18 +14,22 @@ public class KakaoApiClient {
     private static ObjectMapper mapper;
 
     public KakaoApiClient() {
-        DefaultUriBuilderFactory factory = new DefaultUriBuilderFactory("https://dapi.kakao.com");
-        factory.setEncodingMode(DefaultUriBuilderFactory.EncodingMode.NONE);
-        client = WebClient
-                .builder()
-                .uriBuilderFactory(factory)
-                .build();
+        buildClient();
         mapper = new ObjectMapper();
     }
 
     public Coordinates getTmCoordinatesFrom(Coordinates wgsCoordinates) throws JsonProcessingException {
         String responseBody = callApiWith(wgsCoordinates);
         return extractTmCoordinatesFrom(responseBody);
+    }
+
+    private void buildClient() {
+        DefaultUriBuilderFactory factory = new DefaultUriBuilderFactory("https://dapi.kakao.com");
+        factory.setEncodingMode(DefaultUriBuilderFactory.EncodingMode.NONE);
+        client = WebClient
+                .builder()
+                .uriBuilderFactory(factory)
+                .build();
     }
 
     private String callApiWith(Coordinates wgsCoordinates) {
@@ -48,8 +52,10 @@ public class KakaoApiClient {
 
     private Coordinates extractTmCoordinatesFrom(String responseBody) throws JsonProcessingException {
         JsonNode root = mapper.readTree(responseBody);
-        double x = root.required("x").asDouble();
-        double y = root.required("y").asDouble();
+        JsonNode documents = root.required("documents");
+        JsonNode coordinates = documents.required(0); // single element array
+        double x = coordinates.required("x").asDouble();
+        double y = coordinates.required("y").asDouble();
         return new Coordinates(x, y);
     }
 }
