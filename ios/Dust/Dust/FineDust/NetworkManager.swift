@@ -12,12 +12,12 @@ protocol NetworkManable {
     func getResource(from: String, handler: @escaping (Data?, Error?) -> ()) throws
 }
 
-enum NetworkErrorCase : Error {
-    case InvalidURL
-    case NotFound
-}
-
 class NetworkManager {
+    
+    enum ErrorCase : Error {
+        case InvalidURL
+        case NotFound
+    }
     
     // MARK: - Properties
     let decoder = Decoder()
@@ -36,7 +36,7 @@ class NetworkManager {
     // MARK: - Methods
     private func getResource(from: String, handler: @escaping (Data?, Error?)->()) throws {
         guard let url = URL(string: from) else {
-            throw NetworkErrorCase.InvalidURL
+            throw ErrorCase.InvalidURL
         }
         URLSession.shared.dataTask(with: url) {
             (data, response, error) in
