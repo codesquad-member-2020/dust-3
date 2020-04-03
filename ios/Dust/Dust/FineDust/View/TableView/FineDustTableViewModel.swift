@@ -18,11 +18,11 @@ struct FineDustTableCellViewModel: ViewMaker {
         
         init(_ pm: Int) {
             switch pm {
-            case 1...49:
+            case 1...30:
                 self = .green
-            case 50...99:
+            case 31...80:
                 self = .yellow
-            case 100...149:
+            case 81...150:
                 self = .orange
             default:
                 self = .red

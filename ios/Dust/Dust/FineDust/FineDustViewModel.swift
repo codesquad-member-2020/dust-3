@@ -33,13 +33,13 @@ class FineDustViewModel {
             switch self {
             case .happy:
                 return [
-                    UIColor.systemIndigo.cgColor,
-                    UIColor.systemTeal.cgColor,
+                    UIColor.systemGreen.cgColor,
+                    UIColor.secondarySystemFill.cgColor,
                 ]
             case .normal:
                 return [
-                    UIColor.systemGreen.cgColor,
-                    UIColor.secondarySystemFill.cgColor,
+                    UIColor.systemIndigo.cgColor,
+                    UIColor.systemTeal.cgColor,
                 ]
             case .mask:
                 return [

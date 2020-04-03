@@ -67,7 +67,8 @@ extension FineDustViewController: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let tableview = scrollView as! UITableView
-        guard let fisrtCell = tableview.visibleCells.first, let index = tableview.indexPath(for: fisrtCell)?.item else { return }
+        guard let fisrtCell = tableview.visibleCells.first,
+            let index = tableview.indexPath(for: fisrtCell)?.item else { return }
         NotificationCenter.default
             .post(
                 name: Notification.Name.firstCell,
