@@ -160,4 +160,8 @@ gradle-app.setting
 ### Gradle Patch ###
 **/build/
 
+# Project specific
+**/*.gif
+**/*.png
+
 # End of https://www.gitignore.io/api/java,gradle,windows,intellij
