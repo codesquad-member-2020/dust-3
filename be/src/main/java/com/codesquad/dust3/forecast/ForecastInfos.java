@@ -1,4 +1,4 @@
-package com.codesquad.dust3;
+package com.codesquad.dust3.forecast;
 
 import java.util.List;
 
@@ -11,5 +11,9 @@ public class ForecastInfos {
 
     public List<ForecastInfo> getForecastInfos() {
         return forecastInfos;
+    }
+
+    public void setForecastInfos(List<ForecastInfo> forecastInfos) {
+        this.forecastInfos = forecastInfos;
     }
 }
