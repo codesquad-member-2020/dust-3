@@ -3,6 +3,8 @@ package com.codesquad.dust3.webclient;
 import com.codesquad.dust3.airquality.AirQualityInfo;
 import com.codesquad.dust3.airquality.AirQualityInfos;
 import com.codesquad.dust3.airquality.Coordinates;
+import com.codesquad.dust3.forecast.ForecastInfo;
+import com.codesquad.dust3.forecast.ForecastInfos;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,6 +14,16 @@ import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.DefaultUriBuilderFactory;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.URL;
+import java.nio.channels.Channels;
+import java.nio.channels.FileChannel;
+import java.nio.channels.ReadableByteChannel;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,6 +46,59 @@ public class OpenApiClient {
     public AirQualityInfos getAirQualityInfosOf(String stationName) throws JsonProcessingException {
         String jsonOfAirQualityInfos = getJsonOfAirQualityInfosOf(stationName);
         return extractAirQualityInfosFrom(jsonOfAirQualityInfos, stationName);
+    }
+
+    public ForecastInfos getForecastInfos() throws IOException {
+        String jsonOfForecastInfos = getJsonOfForecastInfos();
+        return extractForecastInfosFrom(jsonOfForecastInfos);
+    }
+
+    private ForecastInfos extractForecastInfosFrom(String jsonOfForecastInfos) throws IOException {
+        JsonNode root = mapper.readTree(jsonOfForecastInfos);
+        JsonNode forecastInfos = root.required("list");
+        JsonNode forecastOfToday = forecastInfos.required(0);
+        JsonNode forecastOfTomorrow = forecastInfos.required(1);
+        URL gifUrl = new URL(forecastOfToday.required("imageUrl7").asText());
+        storeGif(gifUrl);
+        convertGifToPng();
+        return initializeForecastInfos(forecastOfToday, forecastOfTomorrow);
+    }
+
+    private ForecastInfos initializeForecastInfos(JsonNode forecastOfToday, JsonNode forecastOfTomorrow) {
+        List<ForecastInfo> forecastInfos = new ArrayList<>();
+        int now = ZonedDateTime.now(ZoneId.of("Asia/Seoul")).getHour();
+        addForecastInfosOfToday(forecastOfToday, forecastInfos, now);
+        addForecastInfosOfTomorrow(forecastOfTomorrow, forecastInfos, now + 24);
+        return new ForecastInfos(forecastInfos);
+    }
+
+    private void addForecastInfosOfToday(JsonNode forecastOfToday, List<ForecastInfo> forecastInfos, int start) {
+        for (int hour = start; hour < 24; hour++) {
+            ForecastInfo forecastInfo = new ForecastInfo(hour, forecastOfToday);
+            forecastInfos.add(forecastInfo);
+        }
+    }
+
+    private void addForecastInfosOfTomorrow(JsonNode forecastOfTomorrow, List<ForecastInfo> forecastInfos, int end) {
+        for (int hour = 24; hour < end; hour++) {
+            ForecastInfo forecastInfo = new ForecastInfo(hour, forecastOfTomorrow);
+            forecastInfos.add(forecastInfo);
+        }
+    }
+
+    private void storeGif(URL url) throws IOException {
+        ReadableByteChannel readableByteChannel = Channels.newChannel(url.openStream());
+        FileOutputStream fileOutputStream = new FileOutputStream("src/main/resources/static/forecast.gif");
+        FileChannel fileChannel = fileOutputStream.getChannel();
+        fileChannel.transferFrom(readableByteChannel, 0, Long.MAX_VALUE);
+    }
+
+    private void convertGifToPng() throws IOException {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        processBuilder.command("convert", "-coalesce",
+                "src/main/resources/static/forecast.gif",
+                "src/main/resources/static/forecast.png");
+        processBuilder.start();
     }
 
     private void buildClient() {
@@ -82,6 +147,21 @@ public class OpenApiClient {
                         .queryParam("stationName", stationName)
                         .queryParam("dataTerm", "DAILY")
                         .queryParam("ver", "1.3")
+                        .build())
+                .accept(MediaType.APPLICATION_JSON)
+                .retrieve()
+                .bodyToMono(String.class)
+                .block();
+    }
+
+    private String getJsonOfForecastInfos() {
+        return client
+                .get()
+                .uri(uriBuilder -> uriBuilder
+                        .path("/openapi/services/rest/ArpltnInforInqireSvc/getMinuDustFrcstDspth")
+                        .queryParams(defaultQueryParams)
+                        .queryParam("searchDate", LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")))
+                        .queryParam("informCode", "PM10")
                         .build())
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
