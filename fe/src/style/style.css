@@ -1,0 +1,177 @@
+body ul, h2 {
+  /* padding: 25px 0px; */
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.tab_Menu {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  /* border: 3px solid #41b883; */
+  line-height: 50px;
+  text-align: center;
+  box-sizing: border-box;
+  
+  color: black;
+}
+
+.menu1 {
+  width: 49%;
+  height: 100%;
+  display: inline-block;
+  border-right: 3px solid #fff;
+  
+}
+
+.menu2 {
+  width: 49%;
+  height: 100%;
+  display: inline-block;
+}
+
+.select {
+  color: white;
+  background-color: #506fc2;
+}
+
+.dust_info {
+  text-align: center;
+}
+
+.dust_title_wrap {
+  height: 60px;
+}
+
+.dust_title {
+  margin: 0;
+  font-size: 35px;
+  line-height: 3;
+}
+
+.dust_stat {
+  font-size: 25px
+}
+
+.dust_stat_image {
+  font-size: 120px;
+  height: 140px;
+}
+
+.dust_dt {
+  font-size: 20px;
+  margin: 5px 0px;
+}
+
+.dust_density {
+}
+
+.dust_graph {
+  margin-top: 5px;
+}
+
+.dust_graph {
+  overflow: hidden;
+}
+
+.graph {
+  overflow-y: scroll;
+  height: 435px;
+}
+
+.graph li {
+  background-color: #333;
+  position: relative;
+}
+
+.graph li h2 {
+  padding: 0px 10px 0px;
+  font-size: 15px;
+  background-color: #222;
+  border-bottom: 1px solid #666;
+}
+
+.graph li strong {
+  background-color: #666;
+  overflow: hidden;
+  list-style: 33px;
+  font-size: 14px;
+  display: block;
+  text-align: right;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: inset -5px -5px -5px rgba(0, 0, 0, 0.3);
+}
+
+.air-status {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  top: 50px;
+  background-color: #fff;
+}
+
+.forecast-title {
+  height: 50px;
+  padding: 10px 0px;
+  text-align: center;
+  line-height: 50px;
+  
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.forecast-text {
+  padding: 0 15px;
+}
+
+.forecast-region-text {
+  margin: 25px 0px;
+}
+
+.play-btn {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 2px 15px 0px 15px ;
+  font-size: 25px;
+  color: #41b883;
+}
+
+.gage {
+  position: relative;
+  width: 95%;
+  margin:1em 8px 3em 8px;
+  border: 1px solid #ccc;
+}
+
+.play-status {
+  font-size: 2em;
+}
+
+.bar {
+  height: 4px;
+  background: gray;
+  display: inline-block;
+  width: 250px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.gage .play-status {
+  position: absolute;
+  top: 0.3em;
+  margin-left: 3.2em;
+}
+
+._image {
+  margin-bottom: 20px;
+  display: none;
+}
+
+._image:first-child {
+  display: block;
+}
