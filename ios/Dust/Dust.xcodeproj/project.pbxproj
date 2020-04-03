@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,21 @@
 		AE91F2CD24360C3700430DA2 /* FineDustViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE91F2CC24360C3700430DA2 /* FineDustViewController.swift */; };
 		AE91F2CF24360C5700430DA2 /* WeatherForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE91F2CE24360C5700430DA2 /* WeatherForecastViewController.swift */; };
 		AE91F2D124360C7300430DA2 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE91F2D024360C7200430DA2 /* MainTabBarController.swift */; };
+		AE91F2D52436112D00430DA2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE91F2D42436112D00430DA2 /* SnapKit */; };
+		AE91F2D7243611F700430DA2 /* FineDustView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE91F2D6243611F700430DA2 /* FineDustView.swift */; };
+		AE91F2DA2436128200430DA2 /* FineDustTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE91F2D92436128200430DA2 /* FineDustTableViewCell.swift */; };
+		AE91F2DD243612F300430DA2 /* FineDustStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE91F2DC243612F300430DA2 /* FineDustStatusView.swift */; };
+		AE91F2DF2436134C00430DA2 /* FineDustTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE91F2DE2436134C00430DA2 /* FineDustTableViewModel.swift */; };
+		AE91F2E22436137A00430DA2 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE91F2E12436137A00430DA2 /* Protocols.swift */; };
+		AE91F2E4243613A500430DA2 /* FineDustStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE91F2E3243613A500430DA2 /* FineDustStatusViewModel.swift */; };
+		AE91F2E6243613C200430DA2 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE91F2E5243613C200430DA2 /* DateManager.swift */; };
+		AE91F2EA243613F200430DA2 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE91F2E9243613F200430DA2 /* Name.swift */; };
+		AE91F2ED2436141600430DA2 /* AirQualityInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE91F2EC2436141600430DA2 /* AirQualityInfos.swift */; };
+		AE91F2EF243614BB00430DA2 /* FineDustViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE91F2EE243614BB00430DA2 /* FineDustViewModel.swift */; };
+		AE91F2F1243614F700430DA2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE91F2F0243614F700430DA2 /* NetworkManager.swift */; };
+		AE91F2F32436151400430DA2 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE91F2F22436151400430DA2 /* Decoder.swift */; };
+		AE91F2F52436153400430DA2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE91F2F42436153400430DA2 /* LocationManager.swift */; };
+		AE91F2F72436155F00430DA2 /* FineDustTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE91F2F62436155F00430DA2 /* FineDustTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +53,20 @@
 		AE91F2CC24360C3700430DA2 /* FineDustViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FineDustViewController.swift; sourceTree = "<group>"; };
 		AE91F2CE24360C5700430DA2 /* WeatherForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastViewController.swift; sourceTree = "<group>"; };
 		AE91F2D024360C7200430DA2 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		AE91F2D6243611F700430DA2 /* FineDustView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FineDustView.swift; sourceTree = "<group>"; };
+		AE91F2D92436128200430DA2 /* FineDustTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FineDustTableViewCell.swift; sourceTree = "<group>"; };
+		AE91F2DC243612F300430DA2 /* FineDustStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FineDustStatusView.swift; sourceTree = "<group>"; };
+		AE91F2DE2436134C00430DA2 /* FineDustTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FineDustTableViewModel.swift; sourceTree = "<group>"; };
+		AE91F2E12436137A00430DA2 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		AE91F2E3243613A500430DA2 /* FineDustStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FineDustStatusViewModel.swift; sourceTree = "<group>"; };
+		AE91F2E5243613C200430DA2 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		AE91F2E9243613F200430DA2 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
+		AE91F2EC2436141600430DA2 /* AirQualityInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityInfos.swift; sourceTree = "<group>"; };
+		AE91F2EE243614BB00430DA2 /* FineDustViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FineDustViewModel.swift; sourceTree = "<group>"; };
+		AE91F2F0243614F700430DA2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		AE91F2F22436151400430DA2 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
+		AE91F2F42436153400430DA2 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		AE91F2F62436155F00430DA2 /* FineDustTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FineDustTableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE91F2D52436112D00430DA2 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +109,9 @@
 		AE91F2A724360C0D00430DA2 /* Dust */ = {
 			isa = PBXGroup;
 			children = (
+				AE91F2EB2436140600430DA2 /* Model */,
+				AE91F2E7243613DB00430DA2 /* Notification */,
+				AE91F2E02436137300430DA2 /* Protocols */,
 				AE91F2CB24360C2500430DA2 /* FineDust */,
 				AE91F2CA24360C2200430DA2 /* WeatherForecast */,
 				AE91F2A824360C0D00430DA2 /* AppDelegate.swift */,
@@ -110,9 +143,68 @@
 		AE91F2CB24360C2500430DA2 /* FineDust */ = {
 			isa = PBXGroup;
 			children = (
+				AE91F2EE243614BB00430DA2 /* FineDustViewModel.swift */,
 				AE91F2CC24360C3700430DA2 /* FineDustViewController.swift */,
+				AE91F2F42436153400430DA2 /* LocationManager.swift */,
+				AE91F2F0243614F700430DA2 /* NetworkManager.swift */,
+				AE91F2F22436151400430DA2 /* Decoder.swift */,
+				AE91F2D224360CE600430DA2 /* View */,
 			);
 			path = FineDust;
+			sourceTree = "<group>";
+		};
+		AE91F2D224360CE600430DA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AE91F2DB243612D700430DA2 /* StatusView */,
+				AE91F2D82436126700430DA2 /* TableView */,
+				AE91F2D6243611F700430DA2 /* FineDustView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AE91F2D82436126700430DA2 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				AE91F2D92436128200430DA2 /* FineDustTableViewCell.swift */,
+				AE91F2DE2436134C00430DA2 /* FineDustTableViewModel.swift */,
+				AE91F2F62436155F00430DA2 /* FineDustTableViewDataSource.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		AE91F2DB243612D700430DA2 /* StatusView */ = {
+			isa = PBXGroup;
+			children = (
+				AE91F2DC243612F300430DA2 /* FineDustStatusView.swift */,
+				AE91F2E3243613A500430DA2 /* FineDustStatusViewModel.swift */,
+				AE91F2E5243613C200430DA2 /* DateManager.swift */,
+			);
+			path = StatusView;
+			sourceTree = "<group>";
+		};
+		AE91F2E02436137300430DA2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AE91F2E12436137A00430DA2 /* Protocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		AE91F2E7243613DB00430DA2 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				AE91F2E9243613F200430DA2 /* Name.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		AE91F2EB2436140600430DA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AE91F2EC2436141600430DA2 /* AirQualityInfos.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +223,9 @@
 			dependencies = (
 			);
 			name = Dust;
+			packageProductDependencies = (
+				AE91F2D42436112D00430DA2 /* SnapKit */,
+			);
 			productName = Dust;
 			productReference = AE91F2A524360C0D00430DA2 /* Dust.app */;
 			productType = "com.apple.product-type.application";
@@ -181,6 +276,9 @@
 				Base,
 			);
 			mainGroup = AE91F29C24360C0D00430DA2;
+			packageReferences = (
+				AE91F2D32436112D00430DA2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = AE91F2A624360C0D00430DA2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -215,9 +313,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE91F2E4243613A500430DA2 /* FineDustStatusViewModel.swift in Sources */,
+				AE91F2F52436153400430DA2 /* LocationManager.swift in Sources */,
 				AE91F2CF24360C5700430DA2 /* WeatherForecastViewController.swift in Sources */,
+				AE91F2DA2436128200430DA2 /* FineDustTableViewCell.swift in Sources */,
+				AE91F2ED2436141600430DA2 /* AirQualityInfos.swift in Sources */,
+				AE91F2D7243611F700430DA2 /* FineDustView.swift in Sources */,
+				AE91F2E22436137A00430DA2 /* Protocols.swift in Sources */,
+				AE91F2EF243614BB00430DA2 /* FineDustViewModel.swift in Sources */,
 				AE91F2CD24360C3700430DA2 /* FineDustViewController.swift in Sources */,
+				AE91F2EA243613F200430DA2 /* Name.swift in Sources */,
+				AE91F2DD243612F300430DA2 /* FineDustStatusView.swift in Sources */,
+				AE91F2E6243613C200430DA2 /* DateManager.swift in Sources */,
+				AE91F2DF2436134C00430DA2 /* FineDustTableViewModel.swift in Sources */,
+				AE91F2F1243614F700430DA2 /* NetworkManager.swift in Sources */,
 				AE91F2D124360C7300430DA2 /* MainTabBarController.swift in Sources */,
+				AE91F2F32436151400430DA2 /* Decoder.swift in Sources */,
+				AE91F2F72436155F00430DA2 /* FineDustTableViewDataSource.swift in Sources */,
 				AE91F2A924360C0D00430DA2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +589,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AE91F2D32436112D00430DA2 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AE91F2D42436112D00430DA2 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE91F2D32436112D00430DA2 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AE91F29D24360C0D00430DA2 /* Project object */;
 }
